@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperture Converter</title>
+    <link rel="icon" type="image/x-icon" href="https://play.google.com/store/apps/details?id=com.redcubez.temperatureConverter&hl=en_IN">
+    <style>
+        body{
+            padding: 0;
+            font-family: sans-serif;
+            background-color: rgb(59, 55, 55);
+        }
+        .border{
+            width: 30%;
+            margin: auto;
+            background-color: aqua;
+            padding: 20px 20px;
+            margin-top: 220px;
+            border-radius: 10px;
+        }
+        .input input{
+            width: 350px;
+            height: 30px;
+            background-color: rgb(77, 73, 73);
+            color: gold;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="border">
+    <h1>Temperture Converter</h1>
+    <div id="container">
+        <h3>Celcius:</h3>
+        <div class="input">
+            <input type="number" name="celcius" value="0"class="in" id="cel" >
+        </div>
+        <br>
+        <h3>Farenhit:</h3>
+        <div class="input" >
+            <input type="number" name="farenhit" value="32" class="in" id="far">
+        </div>
+      </div>
+    </div>
+</body>
+<script>
+var c=document.getElementById("cel");
+var f=document.getElementById("far");
+c.addEventListener('input',function(){
+let ce=this.value;
+let fa=(ce*9/5)+32;
+f.value=fa;
+});
+f.addEventListener('input',function(){
+    let fa=this.value;
+    let ca=(fa-32)*5/9;
+    c.value=ca;
+})
+</script>
+</html>
